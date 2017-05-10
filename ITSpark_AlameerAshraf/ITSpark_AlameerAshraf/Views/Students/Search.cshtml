@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Angular{
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="~/Scripts/Controllers/SearchCtr.js"></script>
+
+    }
+
+<h2 >Search By Filter </h2>
+<div ng-app="myApp" ng-controller="searchctr">
+    <div class="container">
+        <div class="row">
+            <label for="singleSelect"> Search Filters :  </label><br>
+            <select class="form-control" name="select" ng-model="singleSelect">
+                <option value="Name">Name</option>
+                <option value="Course">Course</option>
+                <option value="DateOfBirth">Date</option>
+                <option value="cntry">Country</option>
+            </select>
+            <br />
+            <b> you'r going to search using {{singleSelect}} </b>
+            <br />
+            <br />
+            <input type="text" ng-model="Filter" class="form-control" />
+        </div>
+    </div>
+    <div >
+        <table class="table" >
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>University</th>
+                    <th>Track</th>
+                    <th>Course</th>
+                    <th>Date Of Birth </th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="x in StudentsJson | filter:filterParam(singleSelect, Filter)">
+                <tr>
+                    <td>{{x.Name}}</td>
+                    <td>{{x.University}}</td>
+                    <td>{{x.Track}}</td>
+                    <td>{{x.Course}}</td>
+                    <td>{{x.DateOfBirth}}</td>
+                    <td>{{x.cntry}}</td>
+                </tr>
+            </tbody>
+        </table>
+     </div>
+</div>
+
+
+
+@section scripts{
+
+    }

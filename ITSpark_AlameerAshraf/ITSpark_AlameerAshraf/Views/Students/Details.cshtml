@@ -1,0 +1,66 @@
+﻿@model ITSpark_AlameerAshraf.Models.Student
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.University)
+        </dt>
+
+        <dt>
+            @Html.DisplayName("Country")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.University)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Track)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Track)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Course)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Course)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Countries.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
